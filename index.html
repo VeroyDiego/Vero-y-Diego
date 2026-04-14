@@ -13,6 +13,14 @@
       --cream:#F6F1E9;--ivory:#EDE6D8;--forest:#1D3A2C;--moss:#3A5C44;
       --sage:#7A9E7E;--gold:#B8935A;--blush:#C9A59A;--charcoal:#2A2A25;--ink:#1A1A16
     }
+    /* COUNTDOWN */
+    .cd-section{background:#EDE6D8;padding:70px 40px;text-align:center;border-bottom:1px solid rgba(184,147,90,.15)}
+    .cd-label{font-family:'Jost',sans-serif;font-weight:300;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#3A5C44;margin-bottom:36px}
+    .cd-grid{display:flex;justify-content:center;max-width:580px;margin:0 auto}
+    .cd-item{flex:1;padding:20px 10px;position:relative}
+    .cd-item:not(:last-child)::after{content:'·';position:absolute;right:0;top:50%;transform:translateY(-60%);font-size:28px;color:#B8935A;opacity:.4}
+    .cd-num{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,8vw,72px);line-height:1;color:#1D3A2C}
+    .cd-unit{font-family:'Jost',sans-serif;font-weight:300;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7A9E7E;margin-top:8px}
     html{scroll-behavior:smooth}
     body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden}
 
@@ -182,7 +190,6 @@
 <!-- NAVIGATION -->
 <nav>
   <a href="#ceremonia">Ceremonia</a>
-  <a href="#desde-santiago">Cómo llegar</a>
   <a href="#en-lago-ranco">En Lago Ranco</a>
   <a href="#alojamiento">Alojamiento</a>
   <a href="#codigo-novios">Código novios</a>
@@ -196,12 +203,13 @@
   <div class="hero-content">
     <p class="hero-eyebrow">Nos casamos</p>
     <h1 class="hero-names">
-      Verónica<br>
+      Vero<br>
       <span class="hero-amp">&amp;</span>
       Diego
     </h1>
     <p class="hero-date">16 · Enero · 2027</p>
     <p class="hero-loc">Lago Ranco, Los Ríos, Chile</p>
+  </div>
   </div>
   <div class="scroll-hint">
     <div class="scroll-arr"></div>
@@ -210,6 +218,17 @@
 </div>
 
 
+<!-- COUNTDOWN -->
+<div class="cd-section">
+  <p class="cd-label">Faltan</p>
+  <div class="cd-grid">
+    <div class="cd-item"><div class="cd-num" id="cd-days">—</div><div class="cd-unit">Días</div></div>
+    <div class="cd-item"><div class="cd-num" id="cd-hours">—</div><div class="cd-unit">Horas</div></div>
+    <div class="cd-item"><div class="cd-num" id="cd-mins">—</div><div class="cd-unit">Minutos</div></div>
+    <div class="cd-item"><div class="cd-num" id="cd-secs">—</div><div class="cd-unit">Segundos</div></div>
+  </div>
+</div>
+
 <!-- CEREMONIA -->
 <div id="ceremonia">
   <div class="sw"><div class="sw-wide">
@@ -217,16 +236,15 @@
       <p class="stag">La Ceremonia</p>
       <h2 class="stitle">Un sábado <em>de verano</em><br>junto al lago</h2>
       <p class="sbody" style="max-width:560px">
-        Queremos celebrar este día rodeados de las personas que más amamos, en uno de los lugares más
-        hermosos del sur de Chile. El lago, los arrayanes y el verano patagónico serán testigos de nuestra historia.
+        Queremos celebrar este día rodeados de las personas más cercanas y que queremos, en uno de los lugares más lindos del sur de Chile. Celebraremos con una ceremonia civil y simbólica donde hablarán personas cercanas a nosotros.
       </p>
     </div>
     <div class="cgrid reveal" style="transition-delay:.15s">
       <div class="ccard">
         <svg class="cicon" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" stroke="#1D3A2C" stroke-width="1"/><path d="M18 8v10l6 4" stroke="#B8935A" stroke-width="1.5" stroke-linecap="round"/></svg>
         <span class="cc-lbl">Hora</span>
-        <span class="cc-val">17:00 hrs</span>
-        <span class="cc-sub">Ceremonia civil<br>Recepción desde las 19:30 hrs</span>
+        <span class="cc-val">13:30 hrs</span>
+        <span class="cc-sub">Les pedimos llegar un<br>poco antes para organizarnos</span>
       </div>
       <div class="ccard">
         <svg class="cicon" viewBox="0 0 36 36" fill="none"><rect x="4" y="10" width="28" height="22" rx="1" stroke="#1D3A2C" stroke-width="1"/><path d="M4 16h28" stroke="#B8935A" stroke-width="1"/><path d="M12 4v8M24 4v8" stroke="#1D3A2C" stroke-width="1" stroke-linecap="round"/></svg>
@@ -248,48 +266,12 @@
   </div></div>
 </div>
 
-<!-- DESDE SANTIAGO -->
-<div id="desde-santiago" class="pbg">
-  <div class="pbg-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80&fit=crop')"></div>
-  <div class="pbg-ov" style="background:linear-gradient(180deg,rgba(8,18,12,.82),rgba(12,26,18,.78))"></div>
-  <div class="sw"><div class="sw-wide dk">
-    <div class="reveal">
-      <p class="stag">Cómo llegar desde Santiago</p>
-      <h2 class="stitle">Tú solo preocúpate <em>de venir</em></h2>
-      <div class="divider"></div>
-      <p class="sbody">Lago Ranco está a ~870 km de Santiago. Organizamos dos opciones para que el único trabajo de ustedes sea llegar y disfrutar.</p>
-    </div>
-    <div class="tgrid reveal" style="transition-delay:.15s">
-      <div class="tcard">
-        <div class="tnum">01</div>
-        <div class="ttitle">Bus privado desde Santiago</div>
-        <div class="tbody">
-          Salida desde Santiago el <strong style="color:rgba(246,241,233,.85)">viernes 15 de enero en la noche</strong> (~22:00 hrs), con destino directo a Lago Ranco. Llegarás el sábado en la mañana con tiempo para descansar.<br><br>
-          Regreso el <strong style="color:rgba(246,241,233,.85)">domingo 17 en la tarde</strong>. Llegada a Santiago el lunes de madrugada.<br><br>
-          <strong style="color:rgba(246,241,233,.85)">Cupos limitados · valor a confirmar.</strong>
-        </div>
-        <span class="tlink" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">Reservar cupo →</span>
-      </div>
-      <div class="tcard">
-        <div class="tnum">02</div>
-        <div class="ttitle">Vuelo + transfer al lago</div>
-        <div class="tbody">
-          Vuela a <strong style="color:rgba(246,241,233,.85)">Osorno (ZOS)</strong> — conexión directa desde Santiago con LATAM y Sky.<br><br>
-          Desde el aeropuerto coordinamos vans privadas hasta Lago Ranco (~1 hora desde Osorno).<br><br>
-          <strong style="color:rgba(246,241,233,.85)">Indica tu vuelo en el formulario y coordinamos el pick-up.</strong>
-        </div>
-        <span class="tlink" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">Coordinar traslado →</span>
-      </div>
-    </div>
-  </div></div>
-</div>
-
 <!-- EN LAGO RANCO -->
 <div id="en-lago-ranco">
   <div class="sw"><div class="sw-wide">
     <div class="reveal">
-      <p class="stag">Moverse en Lago Ranco</p>
-      <h2 class="stitle">Una vez que <em>estés acá</em></h2>
+      <p class="stag">Movilización</p>
+      <h2 class="stitle">Cómo <em>moverse</em></h2>
       <p class="sbody" style="max-width:580px">Si llegaste sin auto, estas son tus opciones para moverte con comodidad durante el fin de semana.</p>
     </div>
     <div class="lgrid reveal" style="transition-delay:.12s">
@@ -406,7 +388,7 @@
       </div>
     </div>
     <p class="reveal" style="margin-top:26px;font-family:'Jost',sans-serif;font-weight:300;font-size:12px;color:#9A9A8E;line-height:1.8;transition-delay:.3s">
-      ⚠️ Menciona el matrimonio de Verónica &amp; Diego al reservar. Enero es temporada alta — no lo dejes para último momento.
+      ⚠️ Enero es temporada alta — reserva lo antes posible.
     </p>
 
   </div></div>
@@ -445,7 +427,7 @@
       <p class="stag ctr">Código de novios</p>
       <h2 class="stitle" style="text-align:center">El mejor regalo <em>es tu presencia</em></h2>
       <p class="sbody" style="max-width:560px;margin:0 auto;text-align:center">
-        Si aun así quieres hacernos un regalo, tenemos una lista de novios en Falabella con cosas que necesitamos para nuestro hogar.
+        Después de 2 años viviendo juntos, estamos muy agradecidos de ya tener todo lo necesario. Si desean hacernos un regalo, pueden encontrar nuestra lista de novios en Falabella.
       </p>
     </div>
     <div class="reveal" style="transition-delay:.15s;max-width:560px;margin:48px auto 0;text-align:center">
@@ -471,7 +453,7 @@
       <p class="stag ctr">Confirmación de asistencia</p>
       <h2 class="stitle" style="text-align:center">Dinos que <em>vendrás</em></h2>
       <p class="sbody" style="text-align:center;max-width:520px;margin:0 auto">
-        Confírmanos antes del <strong>1 de noviembre de 2026</strong>. Con estos datos organizamos traslados, alojamiento y el catering con anticipación.
+        Confírmanos antes del <strong>1 de noviembre de 2026</strong>. Con estos datos organizamos traslados, alojamiento y el banquetera con anticipación.
       </p>
     </div>
     <div id="rsvp-area" style="margin-top:50px;">
@@ -542,6 +524,26 @@
 <!-- SheetJS cargado al final, no bloquea rendering -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
 <script>
+// COUNTDOWN — original version
+var weddingDate = new Date('2027-01-16T13:30:00-03:00');
+function updateCountdown() {
+  var now = new Date();
+  var diff = weddingDate.getTime() - now.getTime();
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent  = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent  = '00';
+    document.getElementById('cd-secs').textContent  = '00';
+    return;
+  }
+  function pad(n){ return String(n).padStart(2,'0'); }
+  document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
+  document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+  document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000)  / 60000));
+  document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000)    / 1000));
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
 // SCROLL REVEAL — visible por defecto, animacion como mejora progresiva
 document.querySelectorAll(".reveal").forEach(el=>el.classList.add("will-animate"));
